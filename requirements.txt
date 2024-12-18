@@ -23,6 +23,7 @@ langchain-core==0.3.25
 langchain-openai==0.2.12
 langchain-text-splitters==0.3.3
 langsmith==0.2.3
+load-dotenv==0.1.0
 multidict==6.1.0
 numpy==1.26.4
 openai==1.57.4
@@ -31,6 +32,7 @@ packaging==24.2
 propcache==0.2.1
 pydantic==2.10.3
 pydantic_core==2.27.1
+python-dotenv==1.0.1
 PyYAML==6.0.2
 regex==2024.11.6
 requests==2.32.3

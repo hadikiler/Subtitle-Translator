@@ -1,8 +1,12 @@
-from pathlib import Path
-import time
 from langchain_openai import *
+from dotenv import load_dotenv
+from pathlib import Path
 from os import walk
+import time
+import os
 import re
+
+load_dotenv()
 
 
 def parse_srt(content):
@@ -150,12 +154,12 @@ def translator(source_dir, export_dir, base_url, api_key, model_name, lang, log=
         print(f">>>> {item} finished <<<<")
 
 
-source_dir = "./import"
-export_dir = "./export"
-base_url = "https://api.chatanywhere.org"
-api_key = ""
-model_name = "gpt-4o-mini"
-target_lang = 'persian'
+source_dir = os.getenv('SOURCE_DIR')
+export_dir = os.getenv('EXPORT_DIR')
+base_url = os.getenv('BASE_URL')
+api_key = os.getenv('API_KEY')
+model_name = os.getenv('MODEL_NAME') or "gpt-4o-mini"
+lang = os.getenv('LANG') or 'persian'
 
 if __name__ == "__main__":
     translator(
@@ -164,6 +168,6 @@ if __name__ == "__main__":
         base_url=base_url,
         api_key=api_key,
         model_name=model_name,
-        lang=target_lang,
+        lang=lang,
         delete=True
     )
