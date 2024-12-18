@@ -1,8 +1,10 @@
 <br>
 
-# 🌐 Subtitle Translator (English)
+# 🎥 Subtitle Translator (English)
 
-This project is a tool for translating `.srt` subtitles from any language to any language. You can use this tool to process and translate subtitle files using an AI model. With this project, you will have 200 request credits **per day** to use. <br>
+This project is a tool for translating `.srt` subtitles from any language to any language. You can use this tool to process and translate subtitle files using an AI model. With this project, you will have 200 request credits **per day** to use. 
+<br>However, for certain right-to-left (RTL) languages, like Persian (Farsi), you might need to adjust the text direction in your video player to ensure the subtitles display correctly.
+<br>
 ⚠️ **Note**: Please note that translating large subtitle files will take time, and if the file is too large, your credits may not suffice.
 
 🔎 **Tested Languages**: The project has only been tested on "Persian" and "English" so far.
@@ -67,6 +69,24 @@ python translator.py
 - **`writer(content, export_dir, en_filename)`**: Saves the translated content to the output directory.
 - **`translator(...)`**: Manages the main translation process.
 
+## 🌐 Supported Languages
+
+The Subtitle Translator supports a wide range of languages, including:
+
+- **Left-to-Right (LTR):** English, French, Spanish, German, etc.
+- **Right-to-Left (RTL):** Persian, Arabic, Hebrew, etc.
+
+For RTL languages, additional steps may be required to ensure proper text alignment.
+
+---
+
+## ❓ Why Adjust Text Direction?
+
+Most video players default to left-to-right text alignment. When using translated subtitles in RTL languages, the text might appear misaligned or difficult to read. Adjusting the text direction ensures that:
+
+- The text is properly aligned to the right.
+- Punctuation and sentence flow are displayed correctly.
+  
 ## 📜 License
 
 This project is released under the MIT License. For more details, see the `LICENSE` file.
@@ -97,9 +117,11 @@ addii1385@gmail.com
 <div dir="rtl">
 <br>
 
-#  ترجمه گر زیرنویس  🌐  (فارسی)
+#  ترجمه گر زیرنویس  🎥  (فارسی)
 
 این پروژه یک ابزار ترجمه زیرنویس `.srt` از هر زبان به هر زبانی است. از این ابزار می‌توانید برای پردازش و ترجمه فایل‌های زیرنویس با استفاده از مدل هوش مصنوعی بهره ببرید. در این پروژه شما  200 درخواست **در روز**  اعتبار خواهید داشت که میتوانید از ان استفاده کنید. <br>
+با این حال، برای برخی از زبان‌هایی که از راست به چپ (RTL) نوشته می‌شوند، مانند فارسی، ممکن است نیاز باشد جهت متن را در پخش‌کننده ویدیو تنظیم کنید تا زیرنویس‌ها به درستی نمایش داده شوند.
+<br>
 ⚠️ **نکته**:
 توجه داشته باشید که ترجمه زیر نویس فایل های بزرگ زمان خواهد بود و اگر فایل خیلی بزرگ باشد احتمالا اعتبار شما کافی نخواهد بود.
 
@@ -169,6 +191,25 @@ python translator.py
 - **`reader(en_path)`**: محتوای فایل ورودی را می‌خواند.
 - **`writer(content, export_dir, en_filename)`**: محتوای ترجمه‌شده را در مسیر خروجی ذخیره می‌کند.
 - **`translator(...)`**: فرآیند اصلی ترجمه را مدیریت می‌کند.
+
+
+## 🌐 زبان‌های پشتیبانی‌شده
+
+مترجم زیرنویس از طیف گسترده‌ای از زبان‌ها پشتیبانی می‌کند، از جمله:
+
+- **چپ به راست (LTR):** انگلیسی، فرانسوی، اسپانیایی، آلمانی و غیره.
+- **راست به چپ (RTL):** فارسی، عربی، عبری و غیره.
+
+برای زبان‌های RTL، ممکن است نیاز به انجام مراحل اضافی برای اطمینان از تنظیم صحیح متن باشد.
+
+
+## ❓ چرا باید جهت متن را تنظیم کنیم؟
+
+بیشتر پخش‌کننده‌های ویدیو به طور پیش‌فرض متن‌ها را به صورت چپ به راست تراز می‌کنند. هنگام استفاده از زیرنویس‌های ترجمه شده در زبان‌های RTL، ممکن است متن به درستی تراز نشده یا خواندن آن دشوار باشد. تنظیم جهت متن تضمین می‌کند که:
+
+- متن به درستی به سمت راست تراز شود.
+- علائم نگارشی و جریان جملات به درستی نمایش داده شوند.
+
 
 ## مجوز 📜
 
