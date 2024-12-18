@@ -34,14 +34,14 @@ pip install -r requirements.txt
 ## 🚀 How to Use
 
 1. **Set Variables**:
-   In the main file, adjust the following variables according to your needs:
+   In the .env file, adjust the following variables according to your needs:
 
-   - `source_dir`: The directory path where the input `.srt` subtitle files are located. (Default: `import` folder)
-   - `export_dir`: The directory path where the translated Persian files should be saved. (Default: `export` folder)
-   - `base_url`: The API URL (default value is `https://api.chatanywhere.org`).
-   - `api_key`: The API key obtained in the previous step.
-   - `model_name`: The name of the AI model (default: `gpt-4o-mini`).
-   - `lang` : Destination language (default: `persain`)
+   - `SOURCE_DIR`: The directory path where the input `.srt` subtitle files are located. (Default: `import` folder)
+   - `EXPORT_DIR`: The directory path where the translated Persian files should be saved. (Default: `export` folder)
+   - `BASE_URL`: The API URL (default value is `https://api.chatanywhere.org`).
+   - `API_KEY`: The API key obtained in the previous step.
+   - `MODEL_NAME`: The name of the AI model (default: `gpt-4o-mini`).
+   - `LANG` : Destination language (default: `persain`)
 
 2. **Run the Program**:
    Execute the program using the following command:
@@ -136,12 +136,12 @@ pip install -r requirements.txt
 1. **تنظیم متغیرها**:
    در فایل اصلی، متغیرهای زیر را بر اساس نیاز خود تنظیم کنید:
 
-   - `source_dir`: مسیر پوشه‌ای که فایل‌های زیرنویس `.srt` ورودی در آن قرار دارند. ( پیش فرض پوشه `import` )
-   - `export_dir`: مسیر پوشه‌ای که فایل‌های ترجمه‌شده فارسی باید در آن ذخیره شوند. ( پیشفرض پوشه `export` )
-   - `base_url`: آدرس API (به‌طور پیش‌فرض مقدار آن `https://api.chatanywhere.org` تنظیم شده است).
-   - `api_key`: کلید API که از مرحله قبل دریافت کرده‌اید.
-   - `model_name`: نام مدل هوش مصنوعی (به‌طور پیش‌فرض `gpt-4o-mini`).
-   - `lang` :  زبان مقصد پیشفرض `فارسی` است.
+   - `SOURCE_DIR`: مسیر پوشه‌ای که فایل‌های زیرنویس `.srt` ورودی در آن قرار دارند. ( پیش فرض پوشه `import` )
+   - `EXPORT_DIR`: مسیر پوشه‌ای که فایل‌های ترجمه‌شده فارسی باید در آن ذخیره شوند. ( پیشفرض پوشه `export` )
+   - `BASE_URL`: آدرس API (به‌طور پیش‌فرض مقدار آن `https://api.chatanywhere.org` تنظیم شده است).
+   - `API_KEY`: کلید API که از مرحله قبل دریافت کرده‌اید.
+   - `MODEL_NAME`: نام مدل هوش مصنوعی (به‌طور پیش‌فرض `gpt-4o-mini`).
+   - `LANG` :  زبان مقصد پیشفرض `فارسی` است.
 
 2. **اجرای برنامه**:
    برنامه را با دستور زیر اجرا کنید:
