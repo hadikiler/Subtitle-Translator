@@ -2,7 +2,7 @@
 
 # 🌐 Subtitle Translator (English)
 
-This project is a tool for translating `.srt` subtitles from any language to any language. You can use this tool to process and translate subtitle files using an AI model. With this project, you will have 200 request credits to use. <br>
+This project is a tool for translating `.srt` subtitles from any language to any language. You can use this tool to process and translate subtitle files using an AI model. With this project, you will have 200 request credits **per day** to use. <br>
 ⚠️ **Note**: Please note that translating large subtitle files will take time, and if the file is too large, your credits may not suffice.
 
 🔎 **Tested Languages**: The project has only been tested on "Persian" and "English" so far.
@@ -14,7 +14,7 @@ To use this program, you will need:
 1. **A GitHub account**: If you do not already have a GitHub account, first [sign up here](https://github.com).
 2. **Obtain an `API Key`**: To use this tool, you need to obtain an `API Key`. You can do this through this link:
 
-    👉 [Click here](https://api.chatanywhere.org/v1/oauth/free/render)
+    👉 [Click here (free)](https://api.chatanywhere.org/v1/oauth/free/render)
 
    Once you have obtained the `API Key`, set it in the `api_key` variable.
 
@@ -85,6 +85,9 @@ For support, you can contact us via the following email address:
 ```
 addii1385@gmail.com
 ```
+<br>
+
+> based on [GPT API free](https://github.com/chatanywhere/GPT_API_free)
 <hr>
 <br>
 <br>
@@ -95,7 +98,7 @@ addii1385@gmail.com
 
 #  ترجمه گر زیرنویس  🌐  (فارسی)
 
-این پروژه یک ابزار ترجمه زیرنویس `.srt` از هر زبان به هر زبانی است. از این ابزار می‌توانید برای پردازش و ترجمه فایل‌های زیرنویس با استفاده از مدل هوش مصنوعی بهره ببرید. در این پروژه شما  200 درخواست اعتبار خواهید داشت که میتوانید از ان استفاده کنید. <br>
+این پروژه یک ابزار ترجمه زیرنویس `.srt` از هر زبان به هر زبانی است. از این ابزار می‌توانید برای پردازش و ترجمه فایل‌های زیرنویس با استفاده از مدل هوش مصنوعی بهره ببرید. در این پروژه شما  200 درخواست **در روز**  اعتبار خواهید داشت که میتوانید از ان استفاده کنید. <br>
 ⚠️ **نکته**:
 توجه داشته باشید که ترجمه زیر نویس فایل های بزرگ زمان خواهد بود و اگر فایل خیلی بزرگ باشد احتمالا اعتبار شما کافی نخواهد بود.
 
@@ -109,7 +112,7 @@ addii1385@gmail.com
 2. **دریافت `API Key`**: برای استفاده از این ابزار باید یک `API Key` دریافت کنید. این کار از طریق این لینک امکان‌پذیر است:
 
 
-    [کلیک کنید](https://api.chatanywhere.org/v1/oauth/free/render) 👉
+    [کلیک کنید (رایگان)](https://api.chatanywhere.org/v1/oauth/free/render) 👉
 
 
    پس از دریافت `API Key`، آن را برای اجرای کد در متغیر `api_key` قرار دهید.
@@ -184,5 +187,9 @@ python translator.py
 ```
 addii1385@gmail.com
 ```
+<br>
+
+> برپایه :  [GPT API free](https://github.com/chatanywhere/GPT_API_free)
 
 <hr>
+</div>
