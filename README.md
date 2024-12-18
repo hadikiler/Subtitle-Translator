@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ## 🚀 How to Use
 
 1. **Set Variables**:
-   In the .env file, adjust the following variables according to your needs:
+   In the `.env` file, adjust the following variables according to your needs:
 
    - `SOURCE_DIR`: The directory path where the input `.srt` subtitle files are located. (Default: `import` folder)
    - `EXPORT_DIR`: The directory path where the translated Persian files should be saved. (Default: `export` folder)
@@ -134,7 +134,7 @@ pip install -r requirements.txt
 ## نحوه استفاده 🚀
 
 1. **تنظیم متغیرها**:
-   در فایل اصلی، متغیرهای زیر را بر اساس نیاز خود تنظیم کنید:
+   در فایل `env.` ، متغیرهای زیر را بر اساس نیاز خود تنظیم کنید:
 
    - `SOURCE_DIR`: مسیر پوشه‌ای که فایل‌های زیرنویس `.srt` ورودی در آن قرار دارند. ( پیش فرض پوشه `import` )
    - `EXPORT_DIR`: مسیر پوشه‌ای که فایل‌های ترجمه‌شده فارسی باید در آن ذخیره شوند. ( پیشفرض پوشه `export` )
