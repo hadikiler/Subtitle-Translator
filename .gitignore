@@ -2,3 +2,4 @@
 .venv
 /others
 .idea/
+dev.env
