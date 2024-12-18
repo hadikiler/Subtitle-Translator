@@ -1,0 +1,16 @@
+1
+00:00:01,333 --> 00:00:02,055
+[MUSIC]
+
+2
+00:00:02,055 --> 00:00:05,850
+Welcome to Machine learning.
+
+3
+00:00:05,850 --> 00:00:07,720
+What is machine learning?
+
+4
+00:00:07,720 --> 00:00:11,519
+You probably use it many times
+a day without even knowing it.
