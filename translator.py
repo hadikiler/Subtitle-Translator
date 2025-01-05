@@ -31,8 +31,13 @@ def check_translate(original, translated):
     Check if the translation contains all sections of the original
     """
     original_sections = parse_srt(original)
+    org_length = len(original_sections)
     translated_sections = parse_srt(translated)
+    tr_length = len(translated_sections)
 
+    # check for extra part in translation
+    if org_length != tr_length:
+        return False
     # Check if all keys in the original are present in the translation
     for key in original_sections:
         if key not in translated_sections:
@@ -82,7 +87,9 @@ def split_srt_string(srt_string, max_length=4096):
 def send_request(llm, request, content, log):
     parts = split_srt_string(content, 4096 - len(request))  # split file, max_length is 4096 per request
     full_res = ''
+    counter = 0
     for part in parts:
+        counter += 1
         if log:
             print('=========================================')
             print(part[:100])
@@ -97,11 +104,13 @@ def send_request(llm, request, content, log):
             except Exception as e:
                 return False
 
-            half_res = response.content.replace('`', '')
+            half_res = response.content.replace('`', '').replace('srt', '', 1)  # delete description and symbols
             if check_translate(part, half_res):
-                full_res += ('\n' + half_res)  # save them in main text
+                full_res += ('\n\n' + half_res)  # save them in main text
                 break
-            print('Data lost, try again...')
+            print('Some data lost, try again...')
+        if not log:
+            print(f"translation part{counter} Completed...")
     return full_res
 
 
@@ -116,7 +125,7 @@ def writer(content, export_dir, filename):
         f.write(content)
 
 
-def translator(source_dir, export_dir, base_url, api_key, model_name, lang, log=False, delete=True):
+def translator(source_dir, export_dir, base_url, api_key, model_name, lang, conversational=False, log=False, delete=True):
     llm = ChatOpenAI(
         base_url=base_url,
         model=model_name,
@@ -127,15 +136,27 @@ def translator(source_dir, export_dir, base_url, api_key, model_name, lang, log=
         sub_titles.extend(filenames)
         break
 
+    if conversational:
+        conversational = '`conversational`'
+    else:
+        conversational = ''
+
     for item in sub_titles:
-        request = """
-        help me to translate some .srt text to persion,
+        old_request = f"""
+        help me to translate some .srt text to {conversational} {lang},
         as response only write the result (without any symbol),
         remember we need number and times in text to make .srt file,
-        don't combine to parts or take care of others time,
+        don't combine two parts and take care of their time,
         make sure to not lose any translation,
         also don't add or remove anything from text,
         I put the text in `` and the text:\n
+        """
+
+        request = f"""
+        convert these subtitles in {conversational} {lang} but , i don't mean just translation ,
+        you should understand consept of text and rewrite it by yourself. 
+        focus on the concepts and making the translation natural , meaningful and fluent.
+        I put the text in `` , just give the result and Don't add a part to the translation , their format is .srt:
         """
 
         en_path = f"{source_dir}/{item}"
@@ -146,8 +167,8 @@ def translator(source_dir, export_dir, base_url, api_key, model_name, lang, log=
         if not full_res:
             print("Well, Network in not connected or You reached maximum request per day...")
             return
-        print("%s seconds" % (time.time() - start_time))  # to calculate run time
 
+        print("%s seconds" % (time.time() - start_time))  # to calculate run time
         writer(content=full_res, export_dir=export_dir, filename=item)
         if delete:
             Path.unlink(Path(en_path))  # delete fa file
@@ -159,7 +180,9 @@ export_dir = os.getenv('EXPORT_DIR')
 base_url = os.getenv('BASE_URL')
 api_key = os.getenv('API_KEY')
 model_name = os.getenv('MODEL_NAME') or "gpt-4o-mini"
-lang = os.getenv('LANG') or 'persian'
+lang = os.getenv('LANGUAGE') or 'persian'
+conversational = bool(os.getenv('CONVERSATIONAL')) or True
+
 
 if __name__ == "__main__":
     translator(
@@ -168,6 +191,7 @@ if __name__ == "__main__":
         base_url=base_url,
         api_key=api_key,
         model_name=model_name,
+        conversational=conversational,
         lang=lang,
-        delete=True
+        delete=False,
     )

@@ -43,7 +43,8 @@ pip install -r requirements.txt
    - `BASE_URL`: The API URL (default value is `https://api.chatanywhere.org`).
    - `API_KEY`: The API key obtained in the previous step.
    - `MODEL_NAME`: The name of the AI model (default: `gpt-4o-mini`).
-   - `LANG` : Destination language (default: `persain`)
+   - `LANGUAGE` : Destination language (default: `persain`)
+   - `CONVERSATIONAL` : conversational translation (default : `False`)
 
 2. **Run the Program**:
    Execute the program using the following command:

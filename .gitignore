@@ -1,5 +1,6 @@
 /sub_back
 .venv
 /others
+/examples
 .idea/
 dev.env

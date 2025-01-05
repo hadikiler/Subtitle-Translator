@@ -1,16 +1,45 @@
 1
-00:00:01,333 --> 00:00:02,055
-[MUSIC]
+00:00:00,590 --> 00:00:04,440
+In the last video, you
+saw one visualization of
 
 2
-00:00:02,055 --> 00:00:05,850
-Welcome to Machine learning.
+00:00:04,440 --> 00:00:08,100
+the cost function J
+of w or J of w, b.
 
 3
-00:00:05,850 --> 00:00:07,720
-What is machine learning?
+00:00:08,100 --> 00:00:09,885
+Let's look at some further
 
 4
-00:00:07,720 --> 00:00:11,519
-You probably use it many times
-a day without even knowing it.
+00:00:09,885 --> 00:00:12,060
+richer visualizations
+so that you can get
+
+5
+00:00:12,060 --> 00:00:13,650
+an even better intuition
+
+6
+00:00:13,650 --> 00:00:16,125
+about what the cost
+function is doing.
+
+7
+00:00:16,125 --> 00:00:18,270
+Here is what we've seen so far.
+
+8
+00:00:18,270 --> 00:00:22,665
+There's the model, the
+model's parameters w and b,
+
+9
+00:00:22,665 --> 00:00:25,725
+the cost function J of w and b,
+
+10
+00:00:25,725 --> 00:00:28,410
+as well as the goal
+of linear regression,
