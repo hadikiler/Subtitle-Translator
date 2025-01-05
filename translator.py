@@ -193,5 +193,5 @@ if __name__ == "__main__":
         model_name=model_name,
         conversational=conversational,
         lang=lang,
-        delete=False,
+        delete=True,
     )
