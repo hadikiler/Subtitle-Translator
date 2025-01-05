@@ -164,7 +164,8 @@ pip install -r requirements.txt
    - `BASE_URL`: آدرس API (به‌طور پیش‌فرض مقدار آن `https://api.chatanywhere.org` تنظیم شده است).
    - `API_KEY`: کلید API که از مرحله قبل دریافت کرده‌اید.
    - `MODEL_NAME`: نام مدل هوش مصنوعی (به‌طور پیش‌فرض `gpt-4o-mini`).
-   - `LANG` :  زبان مقصد پیشفرض `فارسی` است.
+   - `LANG` :  زبان مقصد پیشفرض `فارسی` است.CONVERSATIONAL
+   - `CONVERSATIONAL` : ترجمه محاوره ای (پیش فرض خاموش ‍‍`False`)
 
 2. **اجرای برنامه**:
    برنامه را با دستور زیر اجرا کنید:
