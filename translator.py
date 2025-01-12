@@ -13,6 +13,8 @@ def parse_srt(content):
     """
     Parse the content of an SRT file into a dictionary
     """
+    if content.startswith("\ufeff1"):
+        content=content[1:]
     sections = {}
     parts = re.split(r'\n{2,}', content.strip())
     for part in parts:
@@ -84,7 +86,7 @@ def split_srt_string(srt_string, max_length=4096):
     return chunks
 
 
-def send_request(llm, request, content, log):
+def send_request(llm, request, content, log,start_time):
     parts = split_srt_string(content, 4096 - len(request))  # split file, max_length is 4096 per request
     full_res = ''
     counter = 0
@@ -108,20 +110,21 @@ def send_request(llm, request, content, log):
             if check_translate(part, half_res):
                 full_res += ('\n\n' + half_res)  # save them in main text
                 break
-            print('Some data lost, try again...')
+            print(f'\n\rSome data lost, try again...',end="")
         if not log:
-            print(f"translation part{counter} Completed...")
+            percentage_complete=(counter/len(parts))*100
+            print(f"\r{percentage_complete:.2f}% Combleted translation part{counter} Completed...",end="")
     return full_res
 
 
 def reader(en_path):
-    with open(en_path, 'r') as f:  # Read english file
+    with open(en_path, 'r',encoding="utf-8-sig") as f:  # Read english file
         return ''.join(f.readlines())
 
 
 def writer(content, export_dir, filename):
     fa_path = export_dir + "/" + f"tr.{filename}"  # create new fa file path
-    with open(fa_path, 'w') as f:
+    with open(fa_path, 'w',encoding="utf-8") as f:
         f.write(content)
 
 
@@ -161,9 +164,8 @@ def translator(source_dir, export_dir, base_url, api_key, model_name, lang, conv
 
         en_path = f"{source_dir}/{item}"
         content = reader(en_path=en_path)
-
         start_time = time.time()  # to calculate run time
-        full_res = send_request(llm=llm, request=request, content=content, log=log)
+        full_res = send_request(llm=llm, request=request, content=content, log=log,start_time=start_time)
         if not full_res:
             print("Well, Network in not connected or You reached maximum request per day...")
             return
@@ -179,10 +181,11 @@ source_dir = os.getenv('SOURCE_DIR')
 export_dir = os.getenv('EXPORT_DIR')
 base_url = os.getenv('BASE_URL')
 api_key = os.getenv('API_KEY')
+if not api_key:
+    raise ValueError("API_KEY is required but not set.")
 model_name = os.getenv('MODEL_NAME') or "gpt-4o-mini"
 lang = os.getenv('LANGUAGE') or 'persian'
 conversational = bool(os.getenv('CONVERSATIONAL')) or True
-
 
 if __name__ == "__main__":
     translator(
